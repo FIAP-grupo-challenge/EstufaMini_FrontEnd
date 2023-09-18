@@ -1,6 +1,4 @@
 # EstufaMini_FrontEnd
-# Miniestufa_frontend
-
 Estufa mini
 </br>
 Com Front-end feito em:
