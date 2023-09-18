@@ -64,7 +64,6 @@ Abra o projeto em: [http://localhost:3000](http://localhost:3000)
 
 ## Requisições
 
-</br>
 Build do Projeto: (10 pontos):
 ![WhatsApp Image 2023-09-17 at 22 30 03](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/ef702b7a-50e5-457a-9214-4176e7183ba0)
 </br>
