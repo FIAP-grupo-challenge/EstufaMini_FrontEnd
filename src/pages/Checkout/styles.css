@@ -1,0 +1,39 @@
+.examples {
+  width: 70%;
+}
+
+.images-estufa {
+  width: 50%;
+}
+
+.estufaMini {
+  width: 90%;
+}
+
+@media (max-width:995px) {
+  .images-estufa {
+    width: 100%;
+  }
+
+  .estufaMini {
+    width: 60%;
+  }
+
+  .examples {
+    width: 70%;
+  }
+}
+
+@media (max-width:770px) {
+  .images-estufa {
+    width: 100%;
+  }
+
+  .estufaMini {
+    width: 80%;
+  }
+
+  .examples {
+    width: 100%;
+  }
+}

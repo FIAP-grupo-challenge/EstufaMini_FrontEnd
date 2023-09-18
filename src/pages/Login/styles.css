@@ -1,0 +1,40 @@
+.login {
+  width: 50%;
+}
+
+.input-size {
+  width: 100%;
+}
+
+@media (max-width:995px) {
+  .login {
+    width: 70%;
+  }
+
+  .input-size {
+    width: 80%;
+  }
+}
+
+@media (max-width:775px) {
+  .login {
+    width: 70%;
+  }
+
+  .input-size {
+    width: 65%;
+  }
+}
+
+
+@media (max-width:550px) {
+  .login {
+    width: 100%;
+  }
+
+  .input-size {
+    width: 100%;
+  }
+
+
+}

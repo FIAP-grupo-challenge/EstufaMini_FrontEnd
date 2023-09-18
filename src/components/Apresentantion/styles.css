@@ -1,0 +1,16 @@
+.bg-image {
+  background: url("../../assets/bg-image.jpg") no-repeat center;
+}
+
+.overlay-img {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.span {
+  color: rgb(65, 222, 89);
+}
+
+.estufa {
+  width: 50%;
+}
