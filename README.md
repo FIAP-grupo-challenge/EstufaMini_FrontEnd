@@ -40,9 +40,9 @@ Back-End: Python
 Banco de dados: SQL
 </br>
 </br>
-Em Front-end:
+<h1>Em Front-end: </h1>
 
-## Available Scripts
+##  Scripts
 
 Nesse diretório, você pode:
 
