@@ -28,7 +28,7 @@ nossa ideia consiste em mini estufas inteligentes individualizadas, que permitir
  Juntamente a isso, tal proposta foi apresentada como uma solução sustentável pois promovendo um cultivo individual são eliminados quaisquer problemas ambientais gerados nas plantações em massa, como a diminuição da biodiversidade, poluição do solo e da água por manejo inadequado dos recursos, emissão de gases carbônicos em decorrência de queimadas, entre outros.
 </br>
 </br>
- De maneira análoga a isso, a revolução tecnológica em smartcities está altamente presente no projeto, uma vez que esse promove a autossuficiência dos cidadãos. Além disso, a mini estufa permite uma experiência personalizada, simples e agradável para o usuário, ao utilizar engenharias tecnológicas que permitirão controle e acesso a alimentos independente das condições ambientais do cliente, dando a possibilidade de consumo de vegetais e leguminosas que sem a estufa seriam de maior dificuldade, em zonas de extremos calor ou frio, por exemplo, ou até mesmo em locais com falta de recursos do solo ou água.
+De maneira análoga a isso, a revolução tecnológica em smartcities está altamente presente no projeto, uma vez que esse promove a autossuficiência dos cidadãos. Além disso, a mini estufa permite uma experiência personalizada, simples e agradável para o usuário, ao utilizar engenharias tecnológicas que permitirão controle e acesso a alimentos independente das condições ambientais do cliente, dando a possibilidade de consumo de vegetais e leguminosas que sem a estufa seriam de maior dificuldade, em zonas de extremos calor ou frio, por exemplo, ou até mesmo em locais com falta de recursos do solo ou água.
 </br>
 </br>
 ## Sobre nosso sistema:
@@ -48,44 +48,39 @@ Nesse diretório, você pode:
 
 ### `git clone https://github.com/FIAP-grupo-challenge/Miniestufa_frontend.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm install`
+Use para instalar todas as dependências: 
+-Router
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Inicie o npm
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
+Abra o projeto em: [http://localhost:3000](http://localhost:3000) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Requisições
 
 </br>
 Build do Projeto: (10 pontos):
+<img src="./miniestufa/src/assets/build.jpg"/>
 </br>
 Componentização dos elementos envolvidos na semântica do projeto. [props, props.children, fragments, JSX, imports]: (20 pontos):
+<img src="./miniestufa/src/assets/componentizacao.jpg"/>
 </br>
 SessionStorage, LocalStorage: (20 pontos):
+<img src="./miniestufa/src/assets/Fragments_Props.jpg"/>
 </br>
 Hooks [useState, useEffect,useForm](20 pontos):
+<img src="./miniestufa/src/assets/hooks.jpg"/>
+<img src="./miniestufa/src/assets/uso_hooks.jpg.jpg"/>
 </br>
 RouterDOM, Links: (15 pontos):  
+<img src="./miniestufa/src/assets/RouterDom.jpg.jpg"/>
 </br>
 Styled-components: (15 pontos):
+Utilização de BootStap
 </br>
