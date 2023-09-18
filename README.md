@@ -64,24 +64,24 @@ Abra o projeto em: [http://localhost:3000](http://localhost:3000)
 
 ## Requisições
 
-Build do Projeto: (10 pontos):
+Build do Projeto: (10 pontos):</br></br>
 ![WhatsApp Image 2023-09-17 at 22 30 03](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/ef702b7a-50e5-457a-9214-4176e7183ba0)
+</br></br></br>
+Componentização dos elementos envolvidos na semântica do projeto. [props, props.children, fragments, JSX, imports]: (20 pontos):</br></br></br>
+![WhatsApp Image 2023-09-17 at 22 30 54](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/623aa724-5177-4048-bdba-ff5b7307d5ee)</br></br></br>
+![WhatsApp Image 2023-09-17 at 22 33 39](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/1cb51043-64b9-4e67-b427-2b0a6fdfbfea)</br></br>
 </br>
-Componentização dos elementos envolvidos na semântica do projeto. [props, props.children, fragments, JSX, imports]: (20 pontos):
-![WhatsApp Image 2023-09-17 at 22 30 54](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/623aa724-5177-4048-bdba-ff5b7307d5ee)
-![WhatsApp Image 2023-09-17 at 22 33 39](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/1cb51043-64b9-4e67-b427-2b0a6fdfbfea)
-</br>
-SessionStorage, LocalStorage: (20 pontos):
-![WhatsApp Image 2023-09-17 at 22 34 42](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/63c5e768-a3bb-458a-a447-f3e7754ce732)
+SessionStorage, LocalStorage: (20 pontos):</br></br></br>
+![WhatsApp Image 2023-09-17 at 22 34 42](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/63c5e768-a3bb-458a-a447-f3e7754ce732)</br></br>
 </br>
 
-Hooks [useState, useEffect,useForm](20 pontos):
-![WhatsApp Image 2023-09-17 at 22 35 26](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/a01c24ec-6a13-456e-ac59-4571c979e4b0)
+Hooks [useState, useEffect,useForm](20 pontos):</br></br></br></br>
+![WhatsApp Image 2023-09-17 at 22 35 26](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/a01c24ec-6a13-456e-ac59-4571c979e4b0)</br></br>
 
 </br>
-RouterDOM, Links: (15 pontos):  
-![WhatsApp Image 2023-09-17 at 22 31 50](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/617d4c74-cac9-4493-8a27-2ab56371f30b)
-</br>
-Styled-components: (15 pontos):
+RouterDOM, Links: (15 pontos):  </br></br></br>
+![WhatsApp Image 2023-09-17 at 22 31 50](https://github.com/FIAP-grupo-challenge/EstufaMini_FrontEnd/assets/126498244/617d4c74-cac9-4493-8a27-2ab56371f30b)</br></br>
+</br></br></br>
+Styled-components: (15 pontos):</br></br>
 Utilização de BootStap
 </br>
