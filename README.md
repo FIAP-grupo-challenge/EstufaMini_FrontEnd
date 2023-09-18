@@ -66,20 +66,20 @@ Abra o projeto em: [http://localhost:3000](http://localhost:3000)
 
 </br>
 Build do Projeto: (10 pontos):
-<img src="./miniestufa/src/assets/build.jpg"/>
+<img src="./src/assets/build.jpg"/>
 </br>
 Componentização dos elementos envolvidos na semântica do projeto. [props, props.children, fragments, JSX, imports]: (20 pontos):
-<img src="./miniestufa/src/assets/componentizacao.jpg"/>
+<img src="./src/assets/componentizacao.jpg"/>
 </br>
 SessionStorage, LocalStorage: (20 pontos):
-<img src="./miniestufa/src/assets/Fragments_Props.jpg"/>
+<img src="./src/assets/Fragments_Props.jpg"/>
 </br>
 Hooks [useState, useEffect,useForm](20 pontos):
-<img src="./miniestufa/src/assets/hooks.jpg"/>
-<img src="./miniestufa/src/assets/uso_hooks.jpg.jpg"/>
+<img src="./src/assets/hooks.jpg"/>
+<img src="./src/assets/uso_hooks.jpg.jpg"/>
 </br>
 RouterDOM, Links: (15 pontos):  
-<img src="./miniestufa/src/assets/RouterDom.jpg.jpg"/>
+<img src="./src/assets/RouterDom.jpg.jpg"/>
 </br>
 Styled-components: (15 pontos):
 Utilização de BootStap
