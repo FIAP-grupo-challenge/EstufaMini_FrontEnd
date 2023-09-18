@@ -1,10 +1,57 @@
-# Getting Started with Create React App
+# EstufaMini_FrontEnd
+Estufa mini
+</br>
+Com Front-end feito em:
+</br>
+BootStrap e React.
+</br>
+</hr>
+</br>
+99826 - Enzo Silva Cataldi - 1ESR
+</br>
+98887 - Gustavo Ferreira Lopes - 1ESR
+</br>
+552165 - Heitor Freire dos Anjos - 1ESR
+</br>
+551313 - Lucas Fernandes Joaquim - 1ESR
+</br>
+98896 - Rodrigo Fernandes dos Santos - 1ESR
+</br>
+</br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre o projeto
 
-## Available Scripts
+</br>
+nossa ideia consiste em mini estufas inteligentes individualizadas, que permitirão que os consumidores cultivem em suas próprias casas os seus próprios alimentos. Para isso, serão utilizados sensores responsáveis por controlar o ambiente de cultivo, gerando o melhor rendimento possível da plantação.
+</br>
+</br>
+ Juntamente a isso, tal proposta foi apresentada como uma solução sustentável pois promovendo um cultivo individual são eliminados quaisquer problemas ambientais gerados nas plantações em massa, como a diminuição da biodiversidade, poluição do solo e da água por manejo inadequado dos recursos, emissão de gases carbônicos em decorrência de queimadas, entre outros.
+</br>
+</br>
+ De maneira análoga a isso, a revolução tecnológica em smartcities está altamente presente no projeto, uma vez que esse promove a autossuficiência dos cidadãos. Além disso, a mini estufa permite uma experiência personalizada, simples e agradável para o usuário, ao utilizar engenharias tecnológicas que permitirão controle e acesso a alimentos independente das condições ambientais do cliente, dando a possibilidade de consumo de vegetais e leguminosas que sem a estufa seriam de maior dificuldade, em zonas de extremos calor ou frio, por exemplo, ou até mesmo em locais com falta de recursos do solo ou água.
+</br>
+</br>
+## Sobre nosso sistema:
+</br>
+Front-end: BootStrap e React
+</br>
+Back-End: Python
+</br>
+Banco de dados: SQL
+</br>
+</br>
+<h1>Em Front-end: </h1>
 
-In the project directory, you can run:
+##  Scripts
+
+Nesse diretório, você pode:
+
+### `git clone https://github.com/FIAP-grupo-challenge/Miniestufa_frontend.git`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
 ### `npm start`
 
@@ -22,47 +69,23 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Requisições
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</br>
+Build do Projeto: (10 pontos):
+</br>
+Componentização dos elementos envolvidos na semântica do projeto. [props, props.children, fragments, JSX, imports]: (20 pontos):
+</br>
+SessionStorage, LocalStorage: (20 pontos):
+</br>
+Hooks [useState, useEffect,useForm](20 pontos):
+</br>
+RouterDOM, Links: (15 pontos):  
+</br>
+Styled-components: (15 pontos):
+</br>
