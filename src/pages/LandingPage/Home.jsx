@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-// import api from "../../services/api"\
+// import api from "../../services/api"
 // import React from "react";
 import { Header } from "../../components/Header";
 import { Apresentantion } from "../../components/Apresentantion";
@@ -12,21 +12,6 @@ import { Forms } from "../../components/Forms";
 import { Footer } from "../../components/Footer";
 import { Fragment } from "react";
 export function LandingPage() {
-  // async function submit() {
-  //   try {
-  //     const data = {
-  //       cep: "",
-  //       cpf: "",
-  //       email: "",
-  //       idade: "",
-  //       nome: "",
-  //       senha: "",
-  //     }
-  //     const response = api.post("/api/create/acount", data)
-  //   } catch (error) {
-  //     console.log("não cadastrado com sucesso"+error)
-  //   }
-  // }
   return (
     <Fragment>
       <Header />

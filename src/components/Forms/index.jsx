@@ -1,5 +1,6 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal } from "../Modal";
+import api from "../../services/api";
 
 export function Forms() {
   const [name, setName] = useState("");
@@ -14,8 +15,25 @@ export function Forms() {
 
   const [showModal, setShowModal] = useState(false);
 
-  const [error, setError] = useState({});
+  const [error, setError] = useState(null);
 
+  async function submit() {
+    try {
+      const data = {
+        cep,
+        cpf,
+        email,
+        idade: "18",
+        nome: name,
+        senha: password,
+      };
+      const response = await api.post("/api/create/acount", data);
+      console.log(response.data);
+      const saveResponse = sessionStorage.setItem(response.data);
+    } catch (error) {
+      console.log("não cadastrado com sucesso" + error);
+    }
+  }
   useEffect(() => {
     const saveData = sessionStorage.getItem("userInfo");
 
@@ -47,10 +65,9 @@ export function Forms() {
     setDataSave(userInfo);
 
     //Show Modal
-    setShowModal(true);
+    // setShowModal(true);
+    submit();
   };
-
-  async function submit() {}
 
   return (
     <form id="buy" className="text-center">
@@ -137,7 +154,7 @@ export function Forms() {
             className="btn btn-success btn-style py-2 px-3 w-50"
             type="submit"
           >
-            Salvar
+            Criar user
           </button>
         </div>
         <p className="text-danger">{error}</p>
