@@ -1,17 +1,20 @@
-import React from 'react';
-
+import React from "react";
 
 export function Sumary() {
   return (
-    <div className='text-start'>
-      <section className='row w-100 m-1'>
+    <div className="text-start">
+      <section className="row w-100 m-1">
         <h2>Descrição</h2>
         <hr />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nihil ipsam? Et porro ut ad assumenda ipsa necessitatibus enim nam deleniti a, deserunt quisquam repellat temporibus magni sed fugit dolorum pariatur est maxime dicta! Minus vitae, assumenda quos iure beatae vero maiores atque deserunt magni ratione, ut dolorem sint error!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nihil
+          ipsam? Et porro ut ad assumenda ipsa necessitatibus enim nam deleniti
+          a, deserunt quisquam repellat temporibus magni sed fugit dolorum
+          pariatur est maxime dicta! Minus vitae, assumenda quos iure beatae
+          vero maiores atque deserunt magni ratione, ut dolorem sint error!
         </p>
       </section>
-      <section className='row w-100 m-1'>
+      <section className="row w-100 m-1">
         <h2>Funcionalidades</h2>
         <hr />
         <div>
@@ -25,7 +28,7 @@ export function Sumary() {
           </ul>
         </div>
       </section>
-      <section className='row w-100 m-1'>
+      <section className="row w-100 m-1">
         <h2>Observações</h2>
         <hr />
         <div>
@@ -36,9 +39,6 @@ export function Sumary() {
           </ol>
         </div>
       </section>
-
     </div>
-
-
   );
 }

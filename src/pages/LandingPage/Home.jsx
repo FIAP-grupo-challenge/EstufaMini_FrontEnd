@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Logo from '../../assets/logo-estufamini.png';
+import React from "react";
 import "./styles.css";
-// import api from "../../services/api"
+// import api from "../../services/api"\
+// import React from "react";
 import { Header } from "../../components/Header";
 import { Apresentantion } from "../../components/Apresentantion";
 import { Home } from "../../components/Home";
 import { Goals } from "../../components/Goals";
-import { Benefits } from '../../components/Benefits';
+import { Benefits } from "../../components/Benefits";
 import { Sustentability } from "../../components/Sustentability";
 import { Forms } from "../../components/Forms";
 import { Footer } from "../../components/Footer";
@@ -24,12 +24,12 @@ export function LandingPage() {
   //     }
   //     const response = api.post("/api/create/acount", data)
   //   } catch (error) {
-  //     console.log(error)
+  //     console.log("não cadastrado com sucesso"+error)
   //   }
   // }
   return (
     <Fragment>
-      < Header />
+      <Header />
       <main className="container body text-start">
         <Apresentantion />
         {/* home */}
@@ -37,11 +37,13 @@ export function LandingPage() {
           title="Tenha alimentos saudáveis e tenha o monitoramento na palma da sua mão!"
           text="Com a miniestufa, nós proporcionais um equipamento de ponta.
           Que controla todo o ambiente de forma automatizada para
-          as condições ideais." />
+          as condições ideais."
+        />
         {/* objetivos */}
         <Goals
           firstText="Junte-se ao nosso objetivo de aumentar a pegada ecológica e faça parte da inovação agrícola."
-          secondText="Utilizando um pequeno espaço da sua casa, reduza o impacto ambiental! Além de se ajudar com uma alimentação consciente." />
+          secondText="Utilizando um pequeno espaço da sua casa, reduza o impacto ambiental! Além de se ajudar com uma alimentação consciente."
+        />
         {/* beneficios */}
         <Benefits
           bennefitsTitle="Benefícios"
@@ -58,8 +60,8 @@ export function LandingPage() {
         <Sustentability />
         {/* forms */}
         <Forms />
-      </main >
+      </main>
       <Footer />
-    </Fragment >
-  )
+    </Fragment>
+  );
 }
