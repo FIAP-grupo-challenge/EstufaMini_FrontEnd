@@ -7,6 +7,7 @@ import { Chart } from '../../components/Dashboard/chart';
 
 export function Dashboard() {
 
+
   return (
     <div className="vh-100 d-flex flex-column justify-content-between text-center bg-dark page">
       {/* header */}

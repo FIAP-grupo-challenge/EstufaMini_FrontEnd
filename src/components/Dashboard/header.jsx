@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logoImage from "../../assets/logo-estufamini.png";
-
+import api from '../../services/api';
+import { usePlant } from "../../hooks/usePlant";
 
 export function Header() {
+  const [infoUser, setUserInfo] = useState({});
+  const { plants, getPlant, setSelectedPlant } = usePlant();
+
+  function getUserInfo() {
+    const userInfo = JSON.parse(sessionStorage.getItem("client_id"));
+
+    setUserInfo(userInfo);
+    getPlant(userInfo.client_id);
+  }
+
+  function changePlantSelected(plant) {
+    setSelectedPlant(plant);
+  }
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
+
   return (
     <header className="border-bottom border-light">
       <nav className="navbar navbar-dark bg-dark p-2">
@@ -25,28 +44,22 @@ export function Header() {
                   </p>
                   <ul className="dropdown-menu dropdown-menu-dark py-3">
                     <li>
-                      <p className="dropdown-item m-0 px-3 py-2" href="#">Nome: </p>
+                      <p className="dropdown-item m-0 px-3 py-2" href="#">Nome: {infoUser?.nome}</p>
                     </li>
                     <li>
-                      <p className="dropdown-item m-0 px-3 py-2" href="#">CPF: </p>
+                      <p className="dropdown-item m-0 px-3 py-2" href="#">CPF: {infoUser?.cpf}</p>
                     </li>
                     <li>
-                      <p className="dropdown-item m-0 px-3 py-2" href="#">Email: </p>
+                      <p className="dropdown-item m-0 px-3 py-2" href="#">Email: {infoUser?.email} </p>
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item p-2">
-                  <a className="nav-link btn btn-success text-start p-3" href="#">Planta1</a>
-                </li>
-                <li className="nav-item p-2">
-                  <a className="nav-link btn btn-success text-start p-3" href="#">Planta2</a>
-                </li>
-                <li className="nav-item p-2">
-                  <a className="nav-link btn btn-success text-start p-3" href="#">Planta3</a>
-                </li>
-                <li className="nav-item p-2">
-                  <a className="nav-link btn btn-success text-start p-3" href="#">Planta4</a>
-                </li>
+
+                {plants.map(plant => (
+                  <li className="nav-item p-2" key={plant.plant_id}>
+                    <button className="nav-link btn btn-success text-start p-3" href="#" onClick={() => changePlantSelected(plant)}>{plant?.plant_type}</button>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

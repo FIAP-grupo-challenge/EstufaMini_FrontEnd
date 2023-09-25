@@ -1,11 +1,14 @@
 import React from "react";
 import "./App.css";
 import { Dashboard } from "./pages/Dashboard";
+import { PlantProvider } from "./hooks/usePlant"
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <PlantProvider>
+        <Dashboard />
+      </PlantProvider>
     </div>
   );
 }

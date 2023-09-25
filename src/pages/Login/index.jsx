@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logoImage from "../../assets/logo-estufamini.png";
 import "./styles.css";
+import api from "../../services/api";
+
 
 export function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function login() {
+    try {
+      const info = {
+        email,
+        senha: password
+      }
+      const { data } = await api.post("/api/get/client/login", info);
+      console.log(data);
+      if (!data.resposta) {
+        alert("Usuário ou Senha inválidos");
+        return;
+      }
+
+      const saveResponse = sessionStorage.setItem("client_id", JSON.stringify(data));
+
+      window.location.href = "/dash"
+    } catch (error) {
+      alert("user inválido")
+    }
+
+  }
   return (
     <div>
       <div className="vh-100 background-img img-fluid">
@@ -15,19 +41,16 @@ export function Login() {
                 </div>
                 <form action="" className='login d-flex flex-column align-items-center'>
                   <div className="input-size my-2">
-                    <input type="text" id="nome" name="nome" className="form-control input" placeholder="Ex: Fulano de Tal"
-                      minlength="10" maxlength="150" required />
+                    <input type="email" id="email" name="email" className="form-control input" placeholder="Ex: xxx@xxx.com"
+                      required value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                   <div className="input-size my-2">
                     <input type="password" id="senha" name="senha"
                       className="form-control input" placeholder="Ex:!@#$123456"
-                      minlength="6" maxlength="15" required />
+                      minLength="6" maxLength="15" required value={password} onChange={(e) => setPassword(e.target.value)} />
                   </div>
                 </form>
-                <button className="btn btn-success btn-size btn-style" type="submit" >Enviar</button>
-                <p className="">
-                  Já tem login? <a href="">Acesse</a>
-                </p>
+                <button className="btn btn-success btn-size btn-style" type="submit" onClick={login} >Enviar</button>
               </div>
             </div>
           </div>
