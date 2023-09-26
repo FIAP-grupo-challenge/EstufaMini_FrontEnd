@@ -3,33 +3,30 @@ import api from "../../services/api";
 import { useCart } from "../../hooks/useCart";
 
 export function Modal(props) {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(null);
   const { cart } = useCart();
-  const [infouser, setInfoUser] = useState({});
+  const [infoUser, setInfoUser] = useState([]);
 
-  async function request() {
-    let saveData = sessionStorage.getItem("clientId");
-
-    saveData = JSON.parse(saveData);
-
-    const infoClient = await api.get(
-      `/api/get/client?id=${saveData.client_id}`
-    );
-    // console.log(infoClient);
-  }
   async function confirmation() {
-    const user_id = sessionStorage.getItem("clientId");
-    const response = await api.get(`/api/get/client?id=${user_id}`);
-    setInfoUser(response.data);
-  }
-  async function send() {
-    const user_id = sessionStorage.getItem("clientId");
-    const sendBuy = await api.post("/api/create/plant", user_id, cart);
+    const user_id = JSON.parse(sessionStorage.getItem("clientId"));
+    const response = await api.get(`/api/get/client?id=${user_id.client_id}`);
+    console.log(response.data.client);
+    setInfoUser(response.data.client);
   }
 
-  useEffect(() => {
-    confirmation();
-  });
+  async function send() {
+    const user_id = JSON.parse(sessionStorage.getItem("clientId"));
+    const data = {
+      client_id: user_id.client_id,
+      plant_type: cart,
+    };
+    console.log(data);
+    const sendBuy = await api.post("/api/create/plant", data);
+  }
+
+  // useEffect(() => {
+  //   confirmation();
+  // });
 
   return (
     <div>
@@ -46,7 +43,6 @@ export function Modal(props) {
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
                   Confirmação
-                  {infouser}
                 </h1>
                 <button
                   type="button"
@@ -56,16 +52,26 @@ export function Modal(props) {
                 ></button>
               </div>
               <div className="modal-body">
-                <p>{props.name}</p>
-                <p>{props.cpf}</p>
-                <p>{props.email}</p>
-                <p>{props.cep}</p>
+                <div>
+                  <ul>
+                    <li>CEP: {infoUser.cep}</li>
+                    <li>CPF: {infoUser.cpf}</li>
+                    <li>Email: {infoUser.email}</li>
+                    <li>Idade: {infoUser.idade}</li>
+                    <li> Nome: {infoUser.nome}</li>
+                  </ul>
+                </div>
+                <hr />
+                <div>
+                  <p>{cart}</p>
+                </div>
               </div>
               <div className="modal-footer">
                 <button
                   className="btn btn-success"
                   data-bs-target="#exampleModalToggle2"
                   data-bs-toggle="modal"
+                  onClick={send}
                 >
                   Confirme
                 </button>
@@ -114,9 +120,9 @@ export function Modal(props) {
           className="btn btn-success w-50 btn-style"
           data-bs-target="#exampleModalToggle"
           data-bs-toggle="modal"
-          onClick={request}
+          onClick={confirmation}
         >
-          Enviar Dados
+          Confirme a compra
         </button>
       </section>
     </div>

@@ -3,19 +3,16 @@ import { useCart } from "../../hooks/useCart";
 
 export function OptionsSell({ item }) {
   const { addCartItem, removeCartItem } = useCart();
-
   const [quantity, setQuantity] = useState(0);
 
   function addQuantity() {
     setQuantity((prev) => prev + 1);
     addCartItem(item.name);
   }
-
   function subQuantity() {
     if (quantity === 0) {
       return;
     }
-
     setQuantity((prev) => prev - 1);
     removeCartItem(item.name);
   }

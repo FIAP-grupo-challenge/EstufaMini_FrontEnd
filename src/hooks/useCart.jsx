@@ -13,9 +13,7 @@ function CartProvider({ children }) {
 
   function removeCartItem(item) {
     setTotal((prev) => prev - 1);
-
     const indexItem = cart.indexOf(item);
-
     setCart((oldCart) => oldCart.filter((item, index) => index !== indexItem));
   }
 
@@ -28,11 +26,9 @@ function CartProvider({ children }) {
 
 function useCart() {
   const context = useContext(CartContext);
-
   if (!context) {
     throw new Error("useCart must be used within an CartProvider");
   }
-
   return context;
 }
 

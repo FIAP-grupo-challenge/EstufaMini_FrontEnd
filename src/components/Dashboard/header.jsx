@@ -9,7 +9,6 @@ export function Header() {
 
   function getUserInfo() {
     const userInfo = JSON.parse(sessionStorage.getItem("user_info"));
-
     setUserInfo(userInfo);
     getPlant(userInfo.client_id);
   }

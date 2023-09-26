@@ -32,7 +32,7 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              class="bi bi-thermometer-half text-success"
+              className="bi bi-thermometer-half text-success"
               viewBox="0 0 16 16"
             >
               <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z" />
@@ -50,7 +50,7 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              class="bi bi-droplet-half text-success"
+              className="bi bi-droplet-half text-success"
               viewBox="0 0 16 16"
             >
               <path
@@ -74,7 +74,7 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              class="bi bi-lightbulb-fill text-success"
+              className="bi bi-lightbulb-fill text-success"
               viewBox="0 0 16 16"
             >
               <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
@@ -91,7 +91,7 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              class="bi bi-eyedropper text-success"
+              className="bi bi-eyedropper text-success"
               viewBox="0 0 16 16"
             >
               <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z" />
