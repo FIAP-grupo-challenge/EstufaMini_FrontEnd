@@ -1,39 +1,33 @@
 import React, { useState } from "react";
 
-export function OptionsSell({ iconImage, label, actionPlus, actionMinus }) {
+export function OptionsSell({ item, actionPlus, actionMinus }) {
   const [quantity, setQuantity] = useState(0);
 
   function addQuantity() {
     setQuantity((prev) => prev + 1);
-    actionPlus();
+    actionPlus(item.name);
   }
 
   function subQuantity() {
     if (quantity === 0) {
       return;
     }
-    // 0 == false
-    // 0 === false
-    // 1 == true
-    // 1 === true
-    // 2 == '2'
-    // 2 === '2'
 
     setQuantity((prev) => prev - 1);
-    actionMinus();
+    actionMinus(item.name);
   }
 
   return (
     <div className="row  text-center w-100 d-flex my-1 p-0">
       <div className="col cols-sm-3">
         <img
-          src={iconImage}
+          src={item.iconImage}
           alt="imagens dos cultivos"
           className="text-success"
         />
       </div>
       <div className="col cols-sm-3 d-flex align-items-center">
-        <p className="m-0">{label}</p>
+        <p className="m-0">{item.label}</p>
       </div>
       <div className="col cols-sm-3 d-flex align-items-center justify-content-between m-0 p-0">
         <button

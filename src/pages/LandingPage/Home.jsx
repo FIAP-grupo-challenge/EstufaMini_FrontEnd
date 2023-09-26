@@ -1,7 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./styles.css";
-// import api from "../../services/api"
-// import React from "react";
 import { Header } from "../../components/Header";
 import { Apresentantion } from "../../components/Apresentantion";
 import { Home } from "../../components/Home";
@@ -10,7 +8,7 @@ import { Benefits } from "../../components/Benefits";
 import { Sustentability } from "../../components/Sustentability";
 import { Forms } from "../../components/Forms";
 import { Footer } from "../../components/Footer";
-import { Fragment } from "react";
+
 export function LandingPage() {
   return (
     <Fragment>

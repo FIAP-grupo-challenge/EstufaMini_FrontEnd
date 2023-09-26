@@ -17,77 +17,90 @@ const sellOptions = [
   {
     id: "0",
     iconImage: Pepper,
+    name: "pepper",
     label: "Pimentão",
   },
   {
     id: "1",
     iconImage: Tomato,
+    name: "tomato",
     label: "Tomate",
   },
   {
     id: "2",
     iconImage: Lettuce,
+    name: "lettuce",
     label: "Alface",
   },
   {
     id: "3",
     iconImage: Zucchini,
+    name: "zucchini",
     label: "Abobrinha",
   },
   {
     id: "4",
     iconImage: Radish,
+    name: "radish",
     label: "Rabanete",
   },
   {
     id: "5",
     iconImage: Spinach,
+    name: "spinach",
     label: "Espinafre",
   },
   {
     id: "6",
     iconImage: Lentil,
+    name: "lentil",
     label: "Lentilha",
   },
   {
     id: "7",
     iconImage: Leaf,
+    name: "leaf",
     label: "Rúcula",
   },
   {
     id: "8",
     iconImage: Peas,
+    name: "pea",
     label: "Ervilha",
   },
   {
     id: "9",
     iconImage: Beet,
+    name: "beet",
     label: "Beterra",
   },
   {
     id: "10",
     iconImage: Bean,
+    name: "bean",
     label: "Feijão",
   },
   {
     id: "11",
     iconImage: Carrot,
+    name: "carrot",
     label: "Cenoura",
   },
 ];
 
-export function Sell() {
+export function Sell({ addCartItem, removeCartItem }) {
   const [total, setTotal] = useState(0);
 
-  function addItem() {
+  function addItem(item) {
     setTotal(total + 1);
+    addCartItem(item);
   }
 
-  function subItem() {
+  function subItem(item) {
     setTotal(total - 1);
+    removeCartItem(item);
   }
 
-  // function Counter() {}
   return (
     <div className="row row-cols-2 d-flex align-items-start py-2 border border-3 rounded-5 mx-0 px-2">
       <div className="col">
@@ -119,8 +132,7 @@ export function Sell() {
         {sellOptions.map((item) => (
           <OptionsSell
             key={item.id}
-            iconImage={item.iconImage}
-            label={item.label}
+            item={item}
             actionMinus={subItem}
             actionPlus={addItem}
           />

@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Modal } from "../Modal";
+
 import api from "../../services/api";
 
 export function Forms() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [cep, setCep] = useState("");
   const [cpf, setCpf] = useState("");
   const [birthDate, setBirthdate] = useState("");
-
   const [dataSave, setDataSave] = useState({});
 
-  const [showModal, setShowModal] = useState(false);
-
   const [error, setError] = useState(null);
+  const [userData, setUserData] = useState(" ");
 
   async function submit() {
     try {
@@ -29,22 +26,24 @@ export function Forms() {
       };
       const response = await api.post("/api/create/acount", data);
       console.log(response.data);
-      const saveResponse = sessionStorage.setItem(response.data);
+      const saveResponse = sessionStorage.setItem(
+        "clientId",
+        JSON.stringify(response.data)
+      );
     } catch (error) {
       console.log("não cadastrado com sucesso" + error);
     }
   }
-  useEffect(() => {
-    const saveData = sessionStorage.getItem("userInfo");
 
-    if (saveData) {
-      const { saveCep, saveCpf, saveBirthdate } = JSON.parse(saveData);
-      setCep(saveCep);
-      setCpf(saveCpf);
-      setBirthdate(saveBirthdate);
-      setDataSave({ cep: saveCep, cpf: saveCpf, birthDate: saveBirthdate });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (saveData) {
+  //     const { saveCep, saveCpf, saveBirthdate } = JSON.parse(saveData);
+  //     setCep(saveCep);
+  //     setCpf(saveCpf);
+  //     setBirthdate(saveBirthdate);
+  //     setDataSave({ cep: saveCep, cpf: saveCpf, birthDate: saveBirthdate });
+  //   }
+  // }, []);
 
   const sendDataToLocal = (e) => {
     e.preventDefault();
@@ -52,17 +51,16 @@ export function Forms() {
     if (name === "" || email === "" || cpf === "") {
       return setError("Informe os dados corretos");
     } else {
-      setError("");
+      window.open(`/checkout`);
     }
-
     //LocalStorage
-    localStorage.setItem("clientEmail", email);
-    localStorage.setItem("clientName", name);
-    localStorage.setItem("clientPassword", password);
+    // localStorage.setItem("clientEmail", email);
+    // localStorage.setItem("clientName", name);
+    // localStorage.setItem("clientPassword", password);
     //SessionStorage
-    const userInfo = { saveCep: cep, saveCpf: cpf, saveBirthdate: birthDate };
-    sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
-    setDataSave(userInfo);
+    // const userInfo = { saveCep: cep, saveCpf: cpf, saveBirthdate: birthDate };
+    // sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
+    // setDataSave(userInfo);
 
     //Show Modal
     // setShowModal(true);
@@ -159,8 +157,6 @@ export function Forms() {
         </div>
         <p className="text-danger">{error}</p>
       </div>
-
-      {showModal && <Modal name={name} email={email} cpf={cpf} cep={cep} />}
     </form>
   );
 }
