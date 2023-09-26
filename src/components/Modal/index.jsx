@@ -3,7 +3,6 @@ import api from "../../services/api";
 import { useCart } from "../../hooks/useCart";
 
 export function Modal(props) {
-  const [showModal, setShowModal] = useState(null);
   const { cart } = useCart();
   const [infoUser, setInfoUser] = useState([]);
 
@@ -103,7 +102,7 @@ export function Modal(props) {
               </div>
               <div className="modal-footer">
                 <a
-                  href={`/dash`}
+                  href={`/login`}
                   target="_blank"
                   className="btn btn-success"
                   rel="noreferrer"
