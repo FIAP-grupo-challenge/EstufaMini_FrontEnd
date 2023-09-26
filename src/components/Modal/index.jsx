@@ -24,10 +24,6 @@ export function Modal(props) {
     const sendBuy = await api.post("/api/create/plant", data);
   }
 
-  // useEffect(() => {
-  //   confirmation();
-  // });
-
   return (
     <div>
       <section className="row mx-0 my-4 w-100 d-flex justify-content-end">
@@ -63,7 +59,9 @@ export function Modal(props) {
                 </div>
                 <hr />
                 <div>
-                  <p>{cart}</p>
+                  {cart?.map((item) => (
+                    <p>{item}</p>
+                  ))}
                 </div>
               </div>
               <div className="modal-footer">
