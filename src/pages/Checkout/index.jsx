@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MiniEstufa from "../../assets/shopping-removebg-preview.png";
 import Gabinete from "../../assets/gabinete-costa.svg";
 import ExampleInside from "../../assets/Compare.svg";
 import ExampleOut from "../../assets/interface_device.svg";
-import { Dashboard } from "../Dashboard";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Sell } from "../../components/Sell";
 import { Modal } from "../../components/Modal";
 import { Sumary } from "../../components/Sumary";
+import api from "../../services/api";
+import { useCart } from "../../hooks/useCart";
 import "./styles.css";
 
 export function Checkout() {
-  const [cart, setCart] = useState([]);
+  // const { cart } = useCart();
+  // const [infouser, setInfoUser] = useState({});
 
-  function addCartItem(item) {
-    setCart((oldCart) => [...oldCart, item]);
-  }
-
-  function removeCartItem(item) {
-    const indexItem = cart.indexOf(item);
-    setCart((oldCart) => oldCart.filter((item, index) => index !== indexItem));
-  }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
-  // aqui
+  // async function confirmation() {
+  //   const user_id = sessionStorage.getItem("clientId");
+  //   const response = await api.get(`/api/get/client?id=${user_id}`);
+  //   setInfoUser(response.data);
+  // }
+  // async function send() {
+  //   const user_id = sessionStorage.getItem("clientId");
+  //   const sendBuy = await api.post("/api/create/plant", user_id, cart);
+  // }
 
   return (
     <div>
@@ -129,7 +126,7 @@ export function Checkout() {
               </div>
             </div>
           </div>
-          <Sell addCartItem={addCartItem} removeCartItem={removeCartItem} />
+          <Sell />
         </section>
         <Sumary />
         <Modal />

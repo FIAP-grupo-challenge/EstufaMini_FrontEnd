@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../../services/api";
+import { useCart } from "../../hooks/useCart";
 
 export function Modal(props) {
   const [showModal, setShowModal] = useState(false);
+  const { cart } = useCart();
+  const [infouser, setInfoUser] = useState({});
 
   async function request() {
     let saveData = sessionStorage.getItem("clientId");
@@ -14,6 +17,20 @@ export function Modal(props) {
     );
     // console.log(infoClient);
   }
+  async function confirmation() {
+    const user_id = sessionStorage.getItem("clientId");
+    const response = await api.get(`/api/get/client?id=${user_id}`);
+    setInfoUser(response.data);
+  }
+  async function send() {
+    const user_id = sessionStorage.getItem("clientId");
+    const sendBuy = await api.post("/api/create/plant", user_id, cart);
+  }
+
+  useEffect(() => {
+    confirmation();
+  });
+
   return (
     <div>
       <section className="row mx-0 my-4 w-100 d-flex justify-content-end">
@@ -29,6 +46,7 @@ export function Modal(props) {
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
                   Confirmação
+                  {infouser}
                 </h1>
                 <button
                   type="button"

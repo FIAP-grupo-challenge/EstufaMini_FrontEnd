@@ -30,6 +30,7 @@ export function Forms() {
         "clientId",
         JSON.stringify(response.data)
       );
+      window.open(`/checkout`, "_self");
     } catch (error) {
       console.log("não cadastrado com sucesso" + error);
     }
@@ -51,7 +52,7 @@ export function Forms() {
     if (name === "" || email === "" || cpf === "") {
       return setError("Informe os dados corretos");
     } else {
-      window.open(`/checkout`);
+      // window.open(`/checkout`);
     }
     //LocalStorage
     // localStorage.setItem("clientEmail", email);

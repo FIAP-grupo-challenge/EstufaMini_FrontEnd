@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useCart } from "../../hooks/useCart";
 
-export function OptionsSell({ item, actionPlus, actionMinus }) {
+export function OptionsSell({ item }) {
+  const { addCartItem, removeCartItem } = useCart();
+
   const [quantity, setQuantity] = useState(0);
 
   function addQuantity() {
     setQuantity((prev) => prev + 1);
-    actionPlus(item.name);
+    addCartItem(item.name);
   }
 
   function subQuantity() {
@@ -14,7 +17,7 @@ export function OptionsSell({ item, actionPlus, actionMinus }) {
     }
 
     setQuantity((prev) => prev - 1);
-    actionMinus(item.name);
+    removeCartItem(item.name);
   }
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Pepper from "../../assets/Paprika.svg";
 import Tomato from "../../assets/Tomato.svg";
 import Lettuce from "../../assets/Lettuce.svg";
@@ -12,6 +12,7 @@ import Beet from "../../assets/Beet.svg";
 import Bean from "../../assets/Java Bean.svg";
 import Carrot from "../../assets/Carrot.svg";
 import { OptionsSell } from "./OptionsSell";
+import { useCart } from "../../hooks/useCart";
 
 const sellOptions = [
   {
@@ -88,18 +89,8 @@ const sellOptions = [
   },
 ];
 
-export function Sell({ addCartItem, removeCartItem }) {
-  const [total, setTotal] = useState(0);
-
-  function addItem(item) {
-    setTotal(total + 1);
-    addCartItem(item);
-  }
-
-  function subItem(item) {
-    setTotal(total - 1);
-    removeCartItem(item);
-  }
+export function Sell() {
+  const { total } = useCart();
 
   return (
     <div className="row row-cols-2 d-flex align-items-start py-2 border border-3 rounded-5 mx-0 px-2">
@@ -120,7 +111,7 @@ export function Sell({ addCartItem, removeCartItem }) {
           <hr />
         </div>
         <div className="w-100 d-flex justify-content-around align-items-center pb-5">
-          <p className="m-0">{total}</p>
+          <p className="m-0">{total ?? "ainda sem pegar"}</p>
         </div>
         <div className="p-2">
           <h2>Tipos</h2>
@@ -130,12 +121,7 @@ export function Sell({ addCartItem, removeCartItem }) {
       {/* cultivos */}
       <div className="d-flex flex-column w-100 ">
         {sellOptions.map((item) => (
-          <OptionsSell
-            key={item.id}
-            item={item}
-            actionMinus={subItem}
-            actionPlus={addItem}
-          />
+          <OptionsSell key={item.id} item={item} />
         ))}
       </div>
     </div>

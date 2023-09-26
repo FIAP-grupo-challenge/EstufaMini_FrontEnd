@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import { LandingPage } from './pages/LandingPage/Home';
 import { Checkout } from './pages/Checkout';
 import { Login } from './pages/Login';
+import { PlantProvider } from './hooks/usePlant';
+import { CartProvider } from './hooks/useCart';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <PlantProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
+    </PlantProvider>
   </React.StrictMode>
 );
 

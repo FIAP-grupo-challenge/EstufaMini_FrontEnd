@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import logoImage from "../../assets/logo-estufamini.png";
 import "./styles.css";
 import api from "../../services/api";
-
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -12,8 +11,8 @@ export function Login() {
     try {
       const info = {
         email,
-        senha: password
-      }
+        senha: password,
+      };
       const { data } = await api.post("/api/get/client/login", info);
       console.log(data);
       if (!data.resposta) {
@@ -21,13 +20,15 @@ export function Login() {
         return;
       }
 
-      const saveResponse = sessionStorage.setItem("client_id", JSON.stringify(data));
+      const saveResponse = sessionStorage.setItem(
+        "user_info",
+        JSON.stringify(data)
+      );
 
-      window.location.href = "/dash"
+      window.location.href = "/dash";
     } catch (error) {
-      alert("user inválido")
+      alert("user inválido");
     }
-
   }
   return (
     <div>
@@ -39,18 +40,44 @@ export function Login() {
                 <div className="w-50">
                   <img src={logoImage} alt="logo" className="image" />
                 </div>
-                <form action="" className='login d-flex flex-column align-items-center'>
+                <form
+                  action=""
+                  className="login d-flex flex-column align-items-center"
+                >
                   <div className="input-size my-2">
-                    <input type="email" id="email" name="email" className="form-control input" placeholder="Ex: xxx@xxx.com"
-                      required value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="form-control input"
+                      placeholder="Ex: xxx@xxx.com"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                   <div className="input-size my-2">
-                    <input type="password" id="senha" name="senha"
-                      className="form-control input" placeholder="Ex:!@#$123456"
-                      minLength="6" maxLength="15" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input
+                      type="password"
+                      id="senha"
+                      name="senha"
+                      className="form-control input"
+                      placeholder="Ex:!@#$123456"
+                      minLength="6"
+                      maxLength="15"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
                   </div>
                 </form>
-                <button className="btn btn-success btn-size btn-style" type="submit" onClick={login} >Enviar</button>
+                <button
+                  className="btn btn-success btn-size btn-style"
+                  type="submit"
+                  onClick={login}
+                >
+                  Enviar
+                </button>
               </div>
             </div>
           </div>
