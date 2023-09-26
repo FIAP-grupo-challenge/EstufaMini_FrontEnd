@@ -60,7 +60,7 @@ const sellOptions = [
   {
     id: "7",
     iconImage: Leaf,
-    name: "leaf",
+    name: "arugula",
     label: "Rúcula",
   },
   {

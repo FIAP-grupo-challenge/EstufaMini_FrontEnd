@@ -57,7 +57,7 @@ export function Modal(props) {
                   </ul>
                 </div>
                 <hr />
-                <div>
+                <div className="px-4">
                   {cart?.map((item) => (
                     <p>{item}</p>
                   ))}
