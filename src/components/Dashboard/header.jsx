@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import logoImage from "../../assets/logo-estufamini.png";
-import api from "../../services/api";
 import { usePlant } from "../../hooks/usePlant";
 
 export function Header() {

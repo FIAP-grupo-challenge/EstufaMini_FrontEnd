@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { usePlant } from "../../hooks/usePlant";
 import api from "../../services/api";
 
@@ -7,7 +7,7 @@ export function Datas() {
 
   const { selectedPlant } = usePlant();
 
-  async function getPlantInfo() {
+  const getPlantInfo = useCallback(async () => {
     try {
       const response = await api.get(
         `/api/get/plant/info?plant_id=${selectedPlant.plant_id}&option=all`
@@ -16,10 +16,13 @@ export function Datas() {
     } catch (error) {
       console.log(error);
     }
-  }
+  }, [selectedPlant]);
 
   useEffect(() => {
-    getPlantInfo();
+    const update = setInterval(() => {
+      getPlantInfo();
+    }, 60000);
+    return () => clearInterval(update);
   }, [selectedPlant]);
 
   return (
