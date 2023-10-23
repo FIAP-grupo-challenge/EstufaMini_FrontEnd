@@ -18,12 +18,16 @@ export function Datas() {
     }
   }, [selectedPlant]);
 
-  useEffect(() => {
-    const update = setInterval(() => {
-      getPlantInfo();
-    }, 60000);
-    return () => clearInterval(update);
-  }, [selectedPlant]);
+  useEffect(
+    () => {
+      const update = setInterval(() => {
+        getPlantInfo();
+      }, 1000);
+      return () => clearInterval(update);
+    },
+    [selectedPlant],
+    getPlantInfo
+  );
 
   return (
     <section className="row row-cols row-cols-md-2 row-cols-xl-2 g-4 p-2">
