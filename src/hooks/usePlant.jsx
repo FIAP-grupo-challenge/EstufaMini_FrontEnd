@@ -11,27 +11,29 @@ function PlantProvider({ children }) {
     try {
       const response = await api.get(`/api/get/plant/list?id=${client_id}`);
       setPlants(response.data);
+      console.log(response.data);
       setSelectedPlant(response.data[0]);
     } catch (error) {
       console.log(error);
     }
   }
 
-
   return (
-    <PlantContext.Provider value={{ plants, getPlant, selectedPlant, setSelectedPlant }}>
+    <PlantContext.Provider
+      value={{ plants, getPlant, selectedPlant, setSelectedPlant }}
+    >
       {children}
     </PlantContext.Provider>
-  )
+  );
 }
 
 function usePlant() {
   const context = useContext(PlantContext);
   if (!context) {
-    throw new Error('usePlant must be used within an PlantProvider');
+    throw new Error("usePlant must be used within an PlantProvider");
   }
 
   return context;
 }
 
-export { PlantProvider, usePlant }
+export { PlantProvider, usePlant };
