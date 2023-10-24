@@ -2,6 +2,20 @@ import React, { useState, useEffect, useCallback } from "react";
 import { usePlant } from "../../hooks/usePlant";
 import api from "../../services/api";
 
+/**
+ * "plant_status": {
+        "luminosidade": "neutra",
+        "ph": "favoravel",
+        "temperatura": "desfavoravel",
+        "umidade": "favoravel"
+    },
+ * 
+ */
+const TYPES = {
+  neutra: "text-light",
+  desfavoravel: "text-danger",
+  favoravel: "text-success",
+};
 export function Datas() {
   const [infoPlant, setInfoPlant] = useState({});
 
@@ -18,20 +32,17 @@ export function Datas() {
     }
   }, [selectedPlant]);
 
-  useEffect(
-    () => {
-      const update = setInterval(() => {
-        getPlantInfo();
-      }, 1000);
-      return () => clearInterval(update);
-    },
-    [selectedPlant],
-    getPlantInfo
-  );
+  useEffect(() => {
+    const update = setInterval(() => {
+      getPlantInfo();
+    }, 1000);
+    return () => clearInterval(update);
+  }, [selectedPlant, getPlantInfo]);
 
   return (
     <section className="row row-cols row-cols-md-2 row-cols-xl-2 g-4 p-2">
       <div className="col-xl-3 ">
+        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg
@@ -39,17 +50,26 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              className="bi bi-thermometer-half text-success"
+              className={`bi bi-thermometer-half ${
+                TYPES[infoPlant.plant_status?.temperatura]
+              } `}
               viewBox="0 0 16 16"
             >
               <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z" />
               <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
             </svg>
-            <p className="card-text fs-1">{infoPlant.temp}°</p>
+            <p
+              className={`card-text fs-1 ${
+                TYPES[infoPlant.plant_status?.temperatura]
+              }`}
+            >
+              {infoPlant.temp}°
+            </p>
           </div>
         </div>
       </div>
       <div className="col-xl-3">
+        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg
@@ -57,7 +77,9 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              className="bi bi-droplet-half text-success"
+              className={`bi bi-droplet-half ${
+                TYPES[infoPlant.plant_status?.umidade]
+              }`}
               viewBox="0 0 16 16"
             >
               <path
@@ -69,28 +91,44 @@ export function Datas() {
                 d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"
               />
             </svg>
-            <p className="card-text fs-1">{infoPlant.humi}%</p>
+            <p
+              className={`card-text fs-1 ${
+                TYPES[infoPlant.plant_status?.umidade]
+              }`}
+            >
+              {infoPlant.humi}%
+            </p>
           </div>
         </div>
       </div>
       <div className="col-xl-3">
-        <div className="card py-5 px-4 bg-transparent border border-light text-light">
+        {/* aqui */}
+        <div className="card py-5 px-4 bg-transparent border border-light">
           <div className="card-body">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
               height="50"
               fill="currentColor"
-              className="bi bi-lightbulb-fill text-success"
+              className={`bi bi-lightbulb-fill ${
+                TYPES[infoPlant.plant_status?.luminosidade]
+              }`}
               viewBox="0 0 16 16"
             >
               <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
             </svg>
-            <p className="card-text fs-1 ">{infoPlant.light} LUX</p>
+            <p
+              className={`card-text fs-1 ${
+                TYPES[infoPlant.plant_status?.luminosidade]
+              }`}
+            >
+              {infoPlant.light} LUX
+            </p>
           </div>
         </div>
       </div>
       <div className="col-xl-3">
+        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg
@@ -98,12 +136,18 @@ export function Datas() {
               width="50"
               height="50"
               fill="currentColor"
-              className="bi bi-eyedropper text-success"
+              className={`bi bi-eyedropper ${
+                TYPES[infoPlant.plant_status?.ph]
+              }`}
               viewBox="0 0 16 16"
             >
               <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z" />
             </svg>
-            <p className="card-text fs-1">{infoPlant.ph} Ph</p>
+            <p
+              className={`card-text fs-1 ${TYPES[infoPlant.plant_status?.ph]}`}
+            >
+              {infoPlant.ph} Ph
+            </p>
           </div>
         </div>
       </div>
