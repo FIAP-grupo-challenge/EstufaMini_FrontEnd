@@ -9,9 +9,8 @@ function PlantProvider({ children }) {
 
   async function getPlant(client_id) {
     try {
-      const response = await api.get(`/api/get/plant/list?id=${client_id}`);
+      const response = await api.get(`/api/get/plant/list?id=1`);
       setPlants(response.data);
-      console.log(response.data);
       setSelectedPlant(response.data[0]);
     } catch (error) {
       console.log(error);
@@ -29,6 +28,7 @@ function PlantProvider({ children }) {
 
 function usePlant() {
   const context = useContext(PlantContext);
+
   if (!context) {
     throw new Error("usePlant must be used within an PlantProvider");
   }

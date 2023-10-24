@@ -5,22 +5,14 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 
 const data = {
-  // tempo
-  // /api/get/plant/graph?plant_id=1&type={value}
-  labels: [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-  ],
+  labels: [1, 2, 3],
   datasets: [
     {
-      label: "temp/mes",
-      // dado
-      data: [
-        65, 59, 80, 81, 56, 55, 40, 8, 9, 11, 84, 90, 65, 59, 80, 81, 56, 55,
-        40, 8, 9, 11, 84, 90, 65, 59, 80, 81, 56, 55,
-      ],
+      axis: "x",
+      label: "My First Dataset",
+      data: [4, 5, 6],
       fill: false,
-      borderColor: "#000000",
+      borderColor: "#198754",
       tension: 0.1,
     },
   ],
@@ -28,7 +20,7 @@ const data = {
 
 export function Chart() {
   const [chartData, setChartData] = useState(data);
-  const [value, setValue] = useState("temp");
+  const [value, setValue] = useState("");
   const { selectedPlant } = usePlant();
 
   const options = [
@@ -58,28 +50,37 @@ export function Chart() {
       value: "ph",
     },
   ];
+
   function handleSelect(event) {
     setValue(event.target.value);
-    console.log(event.target.value);
   }
 
   const getChartData = useCallback(async () => {
     try {
-      console.log(value);
-      // const response = await api.get(
-      //   `/api/get/plant/graph?plant_id=1&type=temp`
-      // );
       const response = await axios.get(
         `http://localhost:5000/api/get/plant/graph?plant_id=1&type=${value}`
       );
 
-      setChartData(response.data.dados);
-      console.log(response.data.dados.date);
-      console.log(response.data.dados.info);
+      const old = Object.assign(chartData);
+      old.datasets[0].data = response.data.dados.info.filter(
+        (valor, indice, self) => {
+          return self.indexOf(valor) === indice;
+        }
+      );
+      old.labels = response.data.dados.date.filter((valor, indice, self) => {
+        return self.indexOf(valor) === indice;
+      });
+      old.datasets[0].label = value;
+
+      console.log("-----");
+      console.log(old);
+      console.log("-----");
+
+      setChartData(old);
     } catch (error) {
       console.log(error);
     }
-  }, [value]);
+  }, [value, chartData]);
 
   useEffect(() => {
     getChartData();
