@@ -18,6 +18,7 @@ const data = {
   ],
 };
 export function Chart() {
+  const { selectedPlant } = usePlant();
   const [chartData, setChartData] = useState(data);
   const [value, setValue] = useState("temp");
   const options = [
@@ -51,7 +52,7 @@ export function Chart() {
   const getChartData = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:80/api/get/plant/graph?plant_id=1&type=${value}`
+        `http://localhost:80/api/get/plant/graph?plant_id=${selectedPlant}&type=${value}`
       );
 
       const updatedData = {
