@@ -19,6 +19,7 @@ const data = {
 };
 export function Chart() {
   const { selectedPlant } = usePlant();
+  console.log(selectedPlant.plant_id);
   const [chartData, setChartData] = useState(data);
   const [value, setValue] = useState("temp");
   const options = [
@@ -52,7 +53,7 @@ export function Chart() {
   const getChartData = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:80/api/get/plant/graph?plant_id=${selectedPlant}&type=${value}`
+        `http://localhost:80/api/get/plant/graph?plant_id=${selectedPlant.plant_id}&type=${value}`
       );
 
       const updatedData = {
@@ -60,9 +61,9 @@ export function Chart() {
         datasets: [
           {
             axis: "x",
-            label: value,
+            label: "",
             data: response.data.dados.info,
-            fill: false,
+            fill: true,
             borderColor: "#198754",
             tension: 0.1,
           },
@@ -73,7 +74,7 @@ export function Chart() {
     } catch (error) {
       console.log(error);
     }
-  }, [value]);
+  }, [value, selectedPlant]);
 
   useEffect(() => {
     getChartData();
