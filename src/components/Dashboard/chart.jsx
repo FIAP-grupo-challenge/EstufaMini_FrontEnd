@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import api from "../../services/api";
 import { usePlant } from "../../hooks/usePlant";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
-// import { BarChart } from "./Charts/BarChart";
+
 const data = {
   labels: [],
   datasets: [

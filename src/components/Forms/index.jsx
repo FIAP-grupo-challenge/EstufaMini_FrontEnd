@@ -36,35 +36,12 @@ export function Forms() {
     }
   }
 
-  // useEffect(() => {
-  //   if (saveData) {
-  //     const { saveCep, saveCpf, saveBirthdate } = JSON.parse(saveData);
-  //     setCep(saveCep);
-  //     setCpf(saveCpf);
-  //     setBirthdate(saveBirthdate);
-  //     setDataSave({ cep: saveCep, cpf: saveCpf, birthDate: saveBirthdate });
-  //   }
-  // }, []);
-
   const sendDataToLocal = (e) => {
     e.preventDefault();
-    //Validation Field
     if (name === "" || email === "" || cpf === "") {
       return setError("Informe os dados corretos");
     } else {
-      // window.open(`/checkout`);
     }
-    //LocalStorage
-    // localStorage.setItem("clientEmail", email);
-    // localStorage.setItem("clientName", name);
-    // localStorage.setItem("clientPassword", password);
-    //SessionStorage
-    // const userInfo = { saveCep: cep, saveCpf: cpf, saveBirthdate: birthDate };
-    // sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
-    // setDataSave(userInfo);
-
-    //Show Modal
-    // setShowModal(true);
     submit();
   };
 

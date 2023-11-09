@@ -33,7 +33,6 @@ export function Datas() {
   return (
     <section className="row row-cols row-cols-md-2 row-cols-xl-2 g-4 p-2">
       <div className="col-xl-3 ">
-        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg
@@ -60,7 +59,6 @@ export function Datas() {
         </div>
       </div>
       <div className="col-xl-3">
-        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg
@@ -93,7 +91,6 @@ export function Datas() {
         </div>
       </div>
       <div className="col-xl-3">
-        {/* aqui */}
         <div className="card py-5 px-4 bg-transparent border border-light">
           <div className="card-body">
             <svg
@@ -119,7 +116,6 @@ export function Datas() {
         </div>
       </div>
       <div className="col-xl-3">
-        {/* aqui */}
         <div className="card p-5 bg-transparent border border-light text-light">
           <div className="card-body">
             <svg

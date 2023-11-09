@@ -13,19 +13,6 @@ import { useCart } from "../../hooks/useCart";
 import "./styles.css";
 
 export function Checkout() {
-  // const { cart } = useCart();
-  // const [infouser, setInfoUser] = useState({});
-
-  // async function confirmation() {
-  //   const user_id = sessionStorage.getItem("clientId");
-  //   const response = await api.get(`/api/get/client?id=${user_id}`);
-  //   setInfoUser(response.data);
-  // }
-  // async function send() {
-  //   const user_id = sessionStorage.getItem("clientId");
-  //   const sendBuy = await api.post("/api/create/plant", user_id, cart);
-  // }
-
   return (
     <div>
       <div>
