@@ -6,7 +6,7 @@ import api from "../../services/api";
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  // aqui a api verifica o login do usuario e retorna o seu ID do banco de dados, para captar as plantas e os dados da planta para a tela do dashboard
   async function login() {
     try {
       const info = {

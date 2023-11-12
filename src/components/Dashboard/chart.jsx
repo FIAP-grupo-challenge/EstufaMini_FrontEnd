@@ -48,7 +48,8 @@ export function Chart() {
       value: "ph",
     },
   ];
-
+  // obtem os valores por api feita por nós em Python, a qual está conectada a um sistema de arduino.
+  // a partir do id do login, aqui será transmitido os dados do estado da plant, em maior pico do dia, a partir do que foi puxado do banco de dados
   const getChartData = useCallback(async () => {
     try {
       const response = await axios.get(

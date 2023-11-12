@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
 import api from "../../services/api";
 
 export function Forms() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState({});
   const [password, setPassword] = useState("");
-  const [cep, setCep] = useState("");
-  const [cpf, setCpf] = useState("");
+  const [cep, setCep] = useState({});
+  const [cpf, setCpf] = useState({});
   const [birthDate, setBirthdate] = useState("");
-  const [dataSave, setDataSave] = useState({});
-
   const [error, setError] = useState(null);
-  const [userData, setUserData] = useState(" ");
 
   async function submit() {
     try {
       const data = {
-        cep,
-        cpf,
-        email,
+        cep: cep,
+        cpf: cpf,
+        email: email,
         idade: "18",
         nome: name,
         senha: password,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MiniEstufa from "../../assets/shopping-removebg-preview.png";
 import Gabinete from "../../assets/gabinete-costa.svg";
 import ExampleInside from "../../assets/Compare.svg";
@@ -8,8 +8,6 @@ import { Footer } from "../../components/Footer";
 import { Sell } from "../../components/Sell";
 import { Modal } from "../../components/Modal";
 import { Sumary } from "../../components/Sumary";
-import api from "../../services/api";
-import { useCart } from "../../hooks/useCart";
 import "./styles.css";
 
 export function Checkout() {
